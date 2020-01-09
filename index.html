@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/all.css">
+
+    <title>United Way</title>
+    <style>
+      html, body {
+        width: 100%;
+        height: 100%;
+      }
+      body {
+        padding: 0px;
+        margin: 0px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        background-color: #f8f9fa;
+        /*color: #797979;*/
+        font-family: "Microsoft JhengHei","微軟正黑體",sans-serif;
+      }
+      .fab {
+        font-size: 18px;
+      }
+      .fa-facebook-f {
+        margin-right: 8px;
+      }
+      .navbar-title {
+        font-size: 20px;
+        letter-spacing: 1px;
+      }
+      .navbar-nav li a {
+        font-size: 16px;
+      }
+      .carousel-bg-0 {
+        background-image: url(images/adorable-close-up-fingers-1773113.jpg);
+      }
+      .carousel-bg-1 {
+        background-image: url(images/animal-animal-lover-animal-photography-1904105.jpg);
+      }
+      .carousel-bg-2 {
+        background-image: url(images/back-view-boy-child-3030337.jpg);
+      }
+      .carousel-bg {
+        height: 500px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      .carousel-caption-bg {
+        background-color: rgba(0,0,0,0.5);
+        color: #fff;
+        font-size: 16px;
+      }
+      .introduce, .achievement {
+        position: relative;
+      }
+      .intro-col-left {
+        background-image: url(images/art-backlit-beach-256807.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+      }
+      .ach-col-right {
+        background-image: url(images/boy-child-childhood-346796.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+      }
+      .join-col-left {
+        background-image: url(images/care-caregiver-deal-45842.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 360px;
+        position: relative;
+      }
+      .overlay {
+        background: rgba(0, 0, 0, 0.4);
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 360px;
+      }
+      #subscribe_email {
+        display: inline-block;
+        width: 80%;
+      }
+      .ach_dt {
+        font-size: 17px;
+      }
+      @media (max-width: 768px) {
+        .intro-col-right {
+          color: #fff;
+        }
+        .ach-col-left {
+          z-index: 100;
+        }
+        .ach_table {
+          background-color: rgba(0,0,0,0.3);
+          color: #fff;
+        }
+        .contact_form {
+          margin-top: 20px;
+        }
+        .donation_second_text {
+          margin-left: 1.5rem;
+        }
+        .donation_second_row {
+          margin-top: -1.5rem!important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- SocialMedia Icon -->
+    <section class="bg-secondary py-1">
+      <div class="container text-right text-white">
+        <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+      </div>
+    </section>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand navbar-title" href="#"><i class="fas fa-heart mr-1"></i>聯合勸募</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">關於我們</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                工作內容
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">捐贈/倡導/志願服務</a>
+                <a class="dropdown-item" href="#">愛心物資轉運站</a>
+                <a class="dropdown-item" href="#">LOVE LINK 讓愛串門子</a>
+              </div>
+            </li>
+          </ul>
+          <div>
+            <a href="#" class="btn btn-outline-primary btn-sm mr-2" data-toggle="modal" data-target="#loginModal">登入</a>
+            <a href="#" class="btn text-white bg-primary btn-sm" data-toggle="modal" data-target="#registerModal">註冊</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- loginModal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header table-secondary">
+            <h4 class="modal-title" id="loginModalLabel">會員登入</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+            <form class="needs-validation-login" novalidate>
+              <div class="modal-body">
+                <div class="form-group">
+                  <label for="username">帳號</label>
+                  <input type="text" class="form-control" id="username" name="username" placeholder="* 帳號" required="">
+                </div>
+                <div class="form-group">
+                  <label for="password">密碼</label>
+                  <input type="password" class="form-control" id="password" name="password" placeholder="* 密碼" required="">
+                </div>
+              </div>
+              <div class="modal-footer d-flex">
+                <a href="#" data-toggle="modal" data-target="#registerModal" class="mr-auto" data-dismiss="modal">尚未註冊</a>
+                <button type="reset" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                <button type="submit" class="btn btn-primary">送出</button>
+              </div>
+            </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- registerModal -->
+    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header table-secondary text-center">
+            <h4 class="modal-title" id="registerModalLabel">會員註冊</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form action="">
+            <div class="modal-body">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6">
+                    <h5>會員條款</h5>
+                    <p>1. 地上輕鬆為你至少失敗人才少年開通影視，自己的則是特價天天傢。</p>
+                    <p>2. 接收文學好看性質貼圖告訴我遊客，附件觀念公共複製圖文，一半。</p>
+                    <p>3. 配置手段由此停止資產門，裝備現實參考所謂看來音樂網，全國作。</p>
+                    <p>4. 笑道當地給予理念空氣通用批評，政策方案運用文化我會春節小學。</p>
+                    <p>5. 背後專門焦點從事設為信息化，登陸尤其是有所統一討，風險已經。</p>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="username">帳號</label>
+                      <input type="text" class="form-control" id="username" name="username" placeholder="* 帳號" required="">
+                    </div>
+                    <div class="form-group">
+                      <label for="password">密碼</label>
+                      <input type="password" class="form-control" id="password" name="password" placeholder="* 密碼" required="">
+                    </div>
+                    <div class="form-group">
+                      <label for="confirm_password">確認密碼</label>
+                      <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="* 確認密碼" required="">
+                    </div>
+                    <div class="form-group">
+                      <label for="email">Email</label>
+                      <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="* 輸入Email">
+                      <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                    </div>
+                     <div class="form-group">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                          同意會員條款
+                        </label>
+                        <div class="invalid-feedback">
+                          你必須同意會員條款
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer d-flex">
+              <a href="#" data-toggle="modal" data-target="#loginModal" class="mr-auto" data-dismiss="modal">已有帳號</a>
+              <button type="reset" class="btn btn-secondary" data-dismiss="modal">取消</button>
+              <button type="submit" class="btn btn-primary">送出</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>    
+    
+    <!-- Carousel -->
+    <div class="bd-example">
+      <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item carousel-bg carousel-bg-0 active">
+            <div class="carousel-caption d-none d-md-block carousel-caption-bg">
+              <h2 class="font-weight-bold">志願服務</h2>
+              <p>聯合勸募以實踐公益社會的共好價值為願景，組織三大志工團隊，一是擔任審案與稽核的專業志工，背景來自社會福利、法律、會計、企業管理..等領域 ; 二是企業志工，由聯合勸募依據企業志工所能提供的服務技能與時段媒合有需求的社福團體; 三是個人志工利用閒暇與本身專業協助聯合勸募各項業務，補足職工未盡之處。</p>
+            </div>
+          </div>
+          <div class="carousel-item carousel-bg carousel-bg-1">
+            <div class="carousel-caption d-none d-md-block carousel-caption-bg">
+              <h2 class="font-weight-bold">愛心不偏心</h2>
+              <p>把好事做好，除了要有愛心更需要專業加持，才能發揮一加一大於二的功效。而資源若過度集中，將會排擠得不到資源的弱勢。聯合勸募成立的理念，便是希望透過一個專責募款的組織，有效集結社會資源以服務最多的社福團體與弱勢朋友。</p>
+            </div>
+          </div>
+          <div class="carousel-item carousel-bg carousel-bg-2">
+            <div class="carousel-caption d-none d-md-block carousel-caption-bg">
+              <h2 class="font-weight-bold">讓愛串門子</h2>
+              <p>以提出「Love Link 讓愛串門子」3年為期計畫，藉由經費的加碼補助與徵案架構的設定，鼓勵社福團體用更深入、長遠規劃的眼光，進行在地社區培力工作，也讓服務方式有所刺激、創新，真正回應弱勢者需求。</p>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Histroy -->
+    <section class="history bg-warning py-3">
+      <div class="container">
+        <div class="row py-4 text-center">
+          <div class="col-md-4">
+            <i class="fas fa-heart fa-4x"></i>
+            <h3 class="my-2 font-weight-bold">緣起</h3>
+            <p class="text-left">1988年，發生一起「溫暖雜誌詐騙事件」，造成社會大眾因害怕受騙而減少捐款的效應。當時的台北市社會局局長白秀雄先生便出面召集了社工學界的一些教授，號召引入歐美等國行之有年的「聯合勸募」(united way)機制，為台灣的社會福利資源做一個有效並透明化的統合募集、合理分配工作。</p>
+          </div>
+          <div class="col-md-4">
+            <i class="fas fa-smile fa-4x"></i>
+            <h3 class="my-2 font-weight-bold">願景</h3>
+            <p class="text-left">透過捐贈（Give）、倡導（Advocate）與志願服務（Volunteer）等多元方式，成為公益參與者的最佳選擇，推動「教育及學習機會、身心健康維護、經濟生活穩定」等方案，改善弱勢者的處境，實踐社會公平正義。</p>
+          </div>
+          <div class="col-md-4">
+            <i class="fas fa-globe-africa fa-4x"></i>
+            <h3 class="my-2 font-weight-bold">使命</h3>
+            <p class="text-left">偕同企業、公益組織、政府與社會大眾，就台灣社會重要的社福議題提出有效的解決方案，實踐公益社會的共好（Common Good）價值。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Introduce -->
+    <section class="introduce">
+      <div class="row">
+        <div class="col-md-5 intro-col-left"></div>
+        <div class="container">
+          <div class="row justify-content-end intro-col-right">
+            <div class="col-md-7 mt-3">
+              <h2>聯合觀點</h2>
+              <p>聯合觀點集結專家與實務工作者的多元的觀點，讓大眾深入瞭解台灣社會福利服務的現況，藉此從多方視角去探討社會問題及解決方法，進而支持我們為改變社會問題所做的努力。</p>
+              <a href="#" class="btn btn-outline-info btn-sm mr-2">了解更多</a>
+              <div class="row my-3">
+                <div class="col-md-6">
+                  <h3>工作目標</h3>
+                  <p>1. 當公益善款經理人，讓愛心與捐款發揮效益<br />
+                     2. 推動利他主義社會，教育大眾為明智捐款人<br />
+                     3. 支持專業服務組織，充實福利服務體系能量</p>
+                </div>
+                <div class="col-md-6">
+                  <h3>捐款使用原則</h3>
+                  <p>1. 獨立運作的愛心平台 透明責信<br />
+                     2. 穩定發展自民間小額捐款 每分錢都投入於服務<br />
+                     3. 支持及培力全台中小型社福團體 推動社會工作</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Donation -->
+    <section class="donation table-secondary py-4">
+      <div class="container">
+        <h1 class="text-center font-weight-bold mb-2">捐款專案</h1>
+        <div class="row py-3">
+          <div class="col-md-6">
+            <div class="d-flex">
+              <div>
+                <i class="fas fa-hand-holding-heart fa-6x mr-3"></i>
+              </div>
+              <div>
+                <h3>有愛無類-愛心不偏心</h3>
+                <p>因為堅持愛心不偏心，因此除了兒童、青少年、婦女、高齡者、身心障礙者、疾病患者等常見的弱勢族群外，本會也關注在社會的底層，其他許多亟待被關注和解決的社會議題，例如：經濟弱勢延伸出的就業、單親、隔代教養、婚姻暴力、孩童照顧、親子關係、健康等不同需求的問題，這些需要被看見、被重視並且獲得幫助。</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="d-flex">
+              <div>
+                <i class="fas fa-running fa-6x mr-3"></i>
+              </div>
+              <div class="donation_second_text">
+                <h3>願景工程-即刻行動</h3>
+                <p>聯合勸募與聯合報系願景工程攜手開設【願景工程-即刻行動】捐款專案，讓讀者將閱讀報導後的感動化為行動，藉由聯合勸募的專業，以募款資源挹注第一線工作的社福團體，確實解決公共問題，促成正向改變。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row py-3 donation_second_row">
+          <div class="col-md-6 ">
+            <div class="d-flex">
+              <div>
+                <i class="fas fa-mug-hot fa-6x mr-3"></i>
+              </div>
+              <div>
+                <h3>樂齡360-高齡者服務計畫</h3>
+                <p>2019年聯合勸募與44個在地社福團體合作，於全台執行47件弱勢長者的服務計畫，提供友善而尊重的對待和照顧，預計有12,136位長者受益，將有8,554個家庭獲得幫助，幫助了許多與安伯相似境遇之社區長者，提升老後生活品質，落實在地生活、在地老化的目標，達到「尊嚴讓人人擁有」之願景。</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="d-flex">
+              <div>
+                <i class="fas fa-child fa-6x mr-3"></i>
+              </div>
+              <div class="donation_second_text">
+                <h3>孩有機會-弱勢兒少服務計畫</h3>
+                <p>2019年聯合勸募投入46個弱勢兒少的服務計畫，約有42,923個家庭受益，有44,584個孩子獲得幫助。許多像小丸子一樣缺乏關愛與自我管理能力的孩子，需要你的援手，幫助他們在未來邁入另一個學習旅程時，除了擁有基礎學習的基本能力，也同時具備生活自理、自我管理的能力。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Achievement -->
+    <section class="achievement py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7 ach-col-left">
+            <h1 class="py-2 font-weight-bold">2018年成果總回顧</h1>
+            <h5 class="font-italic">資源不該集中在一個地方，讓需要的人得到不偏心的愛。</h5>
+            <table class="table table-striped mt-3 ach_table">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col" class="ach_dt">方向</th>
+                  <th scope="col" class="ach_dt">服務內容</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row" class="ach_dt">食<span class="badge badge-dark ml-2">96案</span></th>
+                  <td>
+                    <p>兒童課後餐食<br />
+                       安置機構生活物資<br />
+                       長者/失能者送餐服務</p>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row" class="ach_dt">食<span class="badge badge-dark ml-2">96案</span></th>
+                  <td>
+                    <p>兒童課後餐食<br />
+                       安置機構生活物資<br />
+                       長者/失能者送餐服務</p>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row" class="ach_dt">衣/生活用品<span class="badge badge-dark ml-2">129案</span></th>
+                  <td>
+                    <p>弱勢家庭物資媒合<br />
+                       愛心待用券<br />
+                       安置機構生活物資</p>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row" class="ach_dt">住<span class="badge badge-dark ml-2">39案</span></th>
+                  <td>
+                    <p>居家修繕<br />
+                       租屋協助<br />
+                       庇護安置<br />
+                       無障礙空間評估/裝設</p>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row" class="ach_dt">行<span class="badge badge-dark ml-2">28案</span></th>
+                  <td>
+                    <p>交通接送<br />
+                   輔具媒合/租借<br />
+                   協助身心障礙者搭乘交通工具</p>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row" class="ach_dt">育<span class="badge badge-dark ml-2">327案</span></th>
+                  <td>
+                    <p>職場培力<br />
+                       兒童課後輔導<br />
+                       照顧者照顧技巧課程<br />
+                       身心障礙/疾病患者復健</p>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row" class="ach_dt">樂/身心健康促進<span class="badge badge-dark ml-2">165案</span></th>
+                  <td>
+                    <p>兒童多元潛能學習<br />
+                       長者健康促進活動<br />
+                       新住民文化交流活動<br />
+                       親子關係促進活動</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-end">
+        <div class="col-md-5 ach-col-right"></div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact py-4">
+      <div class="container">
+        <h1 class="text-center font-weight-bold">聯絡我們</h1>
+        <div class="row py-3">
+          <div class="col-md-6">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.3334111994973!2d121.54139431537855!3d25.022756844895195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442aa2f24e6ce81%3A0x84e9aeb04847c0bc!2zMTA25Y-w5YyX5biC5aSn5a6J5Y2A5b6p6IiI5Y2X6Lev5LqM5q61MzYz6Jmf!5e0!3m2!1szh-TW!2stw!4v1571193839968!5m2!1szh-TW!2stw" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+          </div>
+          <div class="col-md-6">
+            <form class="contact_form">
+              <div class="form-group">
+                <label for="contact_name">姓名</label>
+                <input type="text" class="form-control" id="contact_name" name="contact_name" placeholder="* 姓名" required="">
+                <div id="contact_name_msg"></div>
+              </div>
+              <div class="form-group">
+                <label for="contact_phone">手機</label>
+                <input type="number" class="form-control" id="contact_phone" name="contact_phone" placeholder="* 手機" required="">
+                <div id="contact_phone_msg"></div>
+              </div>
+              <div class="form-group">
+                <label for="contact_email">Email</label>
+                <input type="email" class="form-control" id="contact_email" name="contact_email" placeholder="* Email" required="">
+                <div id="contact_email_msg"></div>
+              </div>
+              <div class="form-group">
+                <label for="category">請選擇合作類別</label>
+                <select class="form-control" id="category">
+                  <option value="企業合作">企業合作</option>
+                  <option value="志願服務">志願服務</option>
+                  <option value="捐款問題">捐款問題</option>
+                  <option value="物資捐贈">物資捐贈</option>
+                  <option value="其他">其他</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="textarea">說明</label>
+                <textarea class="form-control" id="textarea" name="textarea" rows="3" placeholder="說明"></textarea>
+              </div>
+              <div class="button text-right">
+                <button type="reset" class="btn btn-secondary" id="contact_cacel_btn">取消</button>
+                <button type="submit" class="btn btn-primary" id="">送出</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Join -->
+    <section class="join">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6 join-col-left d-flex align-items-center">
+            <div class="overlay"></div>
+            <div class="col-md-9 join-text">
+              <h6 class="text-white font-weight-bold"><u>加入我們</u></h6>
+              <h2 class="text-white">成為全職夥伴</h2>
+              <p class="text-white">聯合勸募執行團隊人才招募，您提交資料後，我們將不定期釋放職缺消息主動聯繫！</p>
+              <a href="#" class="btn btn-outline-warning">加入我們</a>
+            </div>
+          </div>
+          <div class="col-md-6 join-col-left d-flex align-items-center">
+            <div class="overlay"></div>
+            <div class="col-md-9">
+              <h6 class="text-white"><u>加入我們</u></h6>
+              <h2 class="text-white">成為志工</h2>
+              <p class="text-white">加入年度志工，貢獻您的專長，協助團隊事務！</p>
+              <a href="#" class="btn btn-outline-warning">加入我們</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="d-flex">
+              <i class="fas fa-map-marker-alt mr-1"></i>
+              <p>地址：106 台北市大安區復興南路2段363號4樓</p>
+            </div>
+            <div class="d-flex">
+              <i class="fas fa-phone-alt mr-1"></i>
+              <p>電話：02-2378-2256</p>
+            </div>
+            <div class="d-flex">
+              <i class="fas fa-heart mr-1"></i>
+              <p>郵政劃撥：16583882</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <form action="">
+              <div class="form-group">
+                <label for="subscribe">關注聯合勸募最新訊息</label>
+                <div class="d-flex">
+                  <input type="email" class="form-control" id="subscribe_email" name="subscribe_email" placeholder="輸入您的Email">
+                  <button type="submit" class="btn btn-primary" id="">訂閱</button>
+                </div>
+                
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-md-12 text-center">
+            <small>&copy; 2019 中華社會福利聯合勸募協會 & YuHan Huang | All Rights Reserved.</small>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+      "use strict";
+      $(function() {
+        $("#contact_name").on("input propertychange", showNameMsg);
+        $("#contact_phone").on("input propertychange", showPhoneMsg);
+        $("#contact_email").on("input propertychange", showEmailMsg);
+        $("#contact_cacel_btn").on("click", cancelContactMsg);
+      });
+      function showNameMsg() {
+        if($("#contact_name").val().length >=2 && $("#contact_name").val().length <=5) {
+          $("#contact_name_msg").html("");
+        } else {
+          $("#contact_name_msg").html("姓名應為2至5個字");
+          $("#contact_name_msg").css("color", "red");
+        }
+      }
+      function showPhoneMsg() {
+        if($("#contact_phone").val().length == 10) {
+          $("#contact_phone_msg").html("");
+        } else {
+          $("#contact_phone_msg").html("手機號碼應為10個數字");
+          $("#contact_phone_msg").css("color", "red");
+        }
+      }
+      function showEmailMsg() {
+        if($("#contact_email").val().indexOf("@") === -1) {
+          $("#contact_email_msg").html("無效的Email，應包含@");
+          $("#contact_email_msg").css("color", "red");
+        } else {
+          $("#contact_email_msg").html("有效的Email");
+          $("#contact_email_msg").css("color", "green");
+        }
+      }
+      function cancelContactMsg() {
+        $("#contact_name_msg").html("");
+        $("#contact_phone_msg").html("");
+        $("#contact_email_msg").html("");
+      }
+    </script>
+  </body>
+</html>
